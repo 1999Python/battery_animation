@@ -1,7 +1,7 @@
-body{
+body {
     margin: 0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background: rgb(107, 101, 101);
+    background: url(back.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,14 +9,35 @@ body{
     height: 100vh;
 }
 
-.cap{
+.glow {
+    font-size: 80px;
+    color: #fff;
+    text-align: center;
+    animation: glow 1s ease-in-out infinite;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+}
+
+
+
+
+
+.cap {
     width: 30px;
     height: 10px;
     background: rgb(240, 236, 236);
-    border-radius: 5px 5px 0 0;    
+    border-radius: 5px 5px 0 0;
 }
 
-.battery{
+.battery {
     position: relative;
     width: 80px;
     height: 200px;
@@ -28,6 +49,28 @@ body{
     align-items: center;
 }
 
+@keyframes rotateText {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+.text-container {
+    perspective: 1000px;
+    text-align: center;
+}
+
+.animated-text {
+    font-size: 4rem;
+    color: rgb(119, 187, 119);
+    text-transform: uppercase;
+    animation: rotateText 5s linear infinite;
+    transform-style: preserve-3d;
+    position: relative;
+}
 
 .charging-section {
     position: absolute;
@@ -37,47 +80,49 @@ body{
     animation: raiseup 5s infinite ease-in-out;
 }
 
-
-.fa-bolt{
-color: white;
-font-size: 2em;
-z-index: 5;
-animation: infinite pulse 1s ease-in-out;    
+.fa-bolt {
+    color: white;
+    font-size: 2em;
+    z-index: 5;
+    animation: pulse 1s ease-in-out infinite;
 }
 
-@keyframes raiseup{
-
-0%{
-    height: 0%;
-    background: red;
+@keyframes raiseup {
+    0% {
+        height: 0%;
+        background: red;
+    }
+    50% {
+        background: yellow;
+    }
+    100% {
+        height: 100%;
+        background: green;
+    }
 }
 
-50%{
- 
-    background: yellow;
+.different-direction {
+    animation: rotateTextOpposite 5s linear infinite;
+    color: pink;
 }
 
-0%{
-    height: 100%;
-    background: green;
+@keyframes rotateTextOpposite {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(-360deg); /* Negative direction for opposite rotation */
+    }
 }
-
-}
-
 
 @keyframes pulse {
-
-0% {
-    transform: scale(1);
-}
-
-50% {
-    transform: scale(1.1);
-}
-
-100% {
-    transform: scale(1);
-}
-
-
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
