@@ -7,6 +7,12 @@ body {
     align-items: center;
     flex-direction: column;
     height: 100vh;
+    overflow: hidden;
+}
+@media (max-width: 768px) {
+    .glow {
+        font-size: 2rem; /* Adjust font size for smaller screens */
+    }
 }
 
 .glow {
