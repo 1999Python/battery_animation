@@ -1,0 +1,31 @@
+body{
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: rgb(107, 101, 101);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+
+
+.cap{
+    width: 30px;
+    height: 10px;
+    background: rgb(240, 236, 236);
+    border-radius: 5px 5px 0 0;    
+}
+
+.battery{
+    position: relative;
+    width: 80px;
+    height: 200px;
+    border: 2px solid rgb(240, 236, 236);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
